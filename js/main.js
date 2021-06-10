@@ -20,4 +20,4 @@ function checkLineLength (str, maxLength) {
   return false;
 }
 checkLineLength('HTML', 8);
-//Эту функцию написал сам)
+//Эту функцию написал сам.
