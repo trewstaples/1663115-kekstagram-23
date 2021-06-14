@@ -14,10 +14,8 @@ getRandomIntInclusive(0,100);
 //Функция для проверки максимальной длины строки
 //имя_функции(проверяемая_строка, максимальная_длина);
 function checkLineLength (str, maxLength) {
-  if (str.length <= maxLength) {
-    return true;
-  }
-  return false;
+  return str.length <= maxLength;
 }
+
 checkLineLength('HTML', 8);
-//Эту функцию написал сам.
+//Эту функцию написал сам
