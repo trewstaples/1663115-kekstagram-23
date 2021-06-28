@@ -57,6 +57,7 @@ const PHOTO_COUNT = 25;
 //Написать функцию, создающую объект одного комментария c ключами id, avatar, message, name
 const getOneComment = (index) => ({
   id: getRandomPositiveInteger(1, 20),
+  // eslint-disable-next-line quotes
   avatar: `img/avatar-$(index+1).svg`,
   message: MESSAGES[index],
   name: NAMES[index],
