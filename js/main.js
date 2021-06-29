@@ -11,6 +11,11 @@ function getRandomPositiveInteger(a, b) {
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
 }
+const MAGIC_1 = 1;
+const MAGIC_10 = 10;
+const MAGIC_15 = 15;
+const MAGIC_20 = 20;
+const MAGIC_200 = 200;
 
 const DESCRIPTIONS = [
   'Отпуск в Тайланде',
@@ -56,16 +61,15 @@ const PHOTO_COUNT = 25;
 
 //Написать функцию, создающую объект одного комментария c ключами id, avatar, message, name
 const getOneComment = (index) => ({
-  id: getRandomPositiveInteger(1, 20),
-  // eslint-disable-next-line quotes
-  avatar: `img/avatar-$(index+1).svg`,
+  id: getRandomPositiveInteger(MAGIC_1, MAGIC_20),
+  avatar: `img/avatar${index + 1}.svg`,
   message: MESSAGES[index],
   name: NAMES[index],
 });
 
 //Создать массив комментариев с помощью функции
 const createComments = function () {
-  const photoComments = new Array(getRandomPositiveInteger(1, 10))
+  const photoComments = new Array(getRandomPositiveInteger(MAGIC_1, MAGIC_10))
     .fill(null)
     .map((el, index) => getOneComment(index));
   return photoComments;
@@ -76,9 +80,10 @@ const getPhoto = (index) => ({
   id: index + 1,
   url: `photos/${index + 1}.jpg`,
   description: DESCRIPTIONS[index],
-  likes: getRandomPositiveInteger(15, 200),
+  likes: getRandomPositiveInteger(MAGIC_15, MAGIC_200),
   comments: createComments(),
 });
 
 //Создать массив с 25 элементами
 const photos = new Array(PHOTO_COUNT).fill(null).map((el, index) => getPhoto(index));
+photos;
