@@ -11,11 +11,11 @@ function getRandomPositiveInteger(a, b) {
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
 }
-const MAGIC_1 = 1;
-const MAGIC_10 = 10;
-const MAGIC_15 = 15;
-const MAGIC_20 = 20;
-const MAGIC_200 = 200;
+const MIN_COMMENT_RANGE = 1;
+const MAX_COMMENT_MASSIVE = 10;
+const MIN_LIKES_RANGE = 15;
+const MAX_COMMENT_RANGE = 20;
+const MAX_LIKES_RANGE = 200;
 
 const DESCRIPTIONS = [
   'Отпуск в Тайланде',
@@ -61,7 +61,7 @@ const PHOTO_COUNT = 25;
 
 //Написать функцию, создающую объект одного комментария c ключами id, avatar, message, name
 const getOneComment = (index) => ({
-  id: getRandomPositiveInteger(MAGIC_1, MAGIC_20),
+  id: getRandomPositiveInteger(MIN_COMMENT_RANGE, MAX_COMMENT_RANGE),
   avatar: `img/avatar${index + 1}.svg`,
   message: MESSAGES[index],
   name: NAMES[index],
@@ -69,7 +69,7 @@ const getOneComment = (index) => ({
 
 //Создать массив комментариев с помощью функции
 const createComments = function () {
-  const photoComments = new Array(getRandomPositiveInteger(MAGIC_1, MAGIC_10))
+  const photoComments = new Array(getRandomPositiveInteger(MIN_COMMENT_RANGE, MAX_COMMENT_MASSIVE))
     .fill(null)
     .map((el, index) => getOneComment(index));
   return photoComments;
@@ -80,7 +80,7 @@ const getPhoto = (index) => ({
   id: index + 1,
   url: `photos/${index + 1}.jpg`,
   description: DESCRIPTIONS[index],
-  likes: getRandomPositiveInteger(MAGIC_15, MAGIC_200),
+  likes: getRandomPositiveInteger(MIN_LIKES_RANGE, MAX_LIKES_RANGE),
   comments: createComments(),
 });
 
