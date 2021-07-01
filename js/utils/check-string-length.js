@@ -1,4 +1,4 @@
-function checkStringLength (string, length) {
+function checkStringLength(string, length) {
   return string.length <= length;
 }
-checkStringLength (1,3);
+checkStringLength(1, 3);
