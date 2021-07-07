@@ -15,7 +15,7 @@ photos.forEach((photo) => {
   const newPicture = picturesTemplate.cloneNode(true);
   newPicture.querySelector('.picture__img').src = photo.url;
   newPicture.querySelector('.picture__likes').textContent = photo.likes;
-  newPicture.querySelector('.picture__comments').textContent = photo.comments;
+  newPicture.querySelector('.picture__comments').textContent = photo.comments.length;
   picturesFragment.appendChild(newPicture);
 });
 
