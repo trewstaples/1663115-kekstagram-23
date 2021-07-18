@@ -75,4 +75,5 @@ const getPhoto = (index) => ({
 
 //Создать массив с 25 элементами
 const photos = new Array(PHOTO_COUNT).fill(null).map((el, index) => getPhoto(index));
+
 export { photos };
